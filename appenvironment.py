@@ -2,6 +2,9 @@ import pathlib
 import venv
 import os
 
+if not pathlib.Path().is_dir(os.path.expanduser("~/.pypkg/")):
+    import pypkgsetup
+
 def delenv(name="throwerrror"):
     os.system(f"rm -rf ~/.pypkg/appenvs/{name}")
 
