@@ -20,7 +20,7 @@ class AppBuilder:
         self.tempfolder = "pypkgbuildtmp"+str(random.randint(11111,99999)) 
         os.mkdir(self.tempfolder)
 
-        self.build = tarfile.open(f"build.tar.gz","w:")
+        self.build = tarfile.open(f"build.pypkg","w:")
 
         self.config = {"dotdesktop":{}}
 
