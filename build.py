@@ -2,7 +2,6 @@ import tarfile
 import random
 import atexit
 import shutil
-import yaml
 import os
 
 class JsonDotDesktopBuilder:
