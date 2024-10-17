@@ -5,19 +5,13 @@ import shutil
 import json
 import os
 
-class JsonDotDesktopBuilder:
-    def __init__(self,json: dict):
-        self.build = "[Desktop Entry]\n"
-        for k,v in json.items():
-                self.build = f"{k}={v}\n"
-
 class AppBuilder:
     def __init__(self):
         """Class for building pypkg apps.
         """
 
         # Setup Temporary build folder
-        self.tempfolder = "pypkgbuildtmp"+str(random.randint(11111,99999)) 
+        self.tempfolder = os.path.expanduser("~/.pypkg/pypkgbuildtmp"+str(random.randint(11111,99999))) 
         os.mkdir(self.tempfolder)
 
         self.build = tarfile.open(f"build.pypkg","w:")
